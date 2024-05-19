@@ -1,0 +1,340 @@
+/*SOMMAIRE*/
+
+/* REGLES GENERALE */
+    /* font */
+        @font-face {
+            font-family:"myriad";
+            src: url(../font/MYRIADPRO-REGULAR.OTF);
+        }
+    /* fin font */
+    /* theme  */
+
+        .btn{
+            border-radius: 5px;
+            background: var(--color1);
+            color: var(--color3);
+            padding: 10px 15px
+        }
+        .btn:hover,header ul li>a:hover {
+            background: var(--color5);
+            color: var(--color1);
+        }
+        div[role="button"]{
+            padding: 30px 0;
+        }
+        .radius_left,.radius_right{
+            box-shadow: 10px 0 var(--color9), -10px 0 var(--color9);
+            background: linear-gradient( to right,var(--color8), var(--color1));
+        }
+        
+      
+        .radius_left{
+            border-top-left-radius: 200px;
+            border-bottom-right-radius: 200px;
+            background: linear-gradient( to right,var(--color8), var(--color1));
+        }
+        .radius_right{
+            border-top-right-radius: 200px;
+            border-bottom-left-radius: 200px;
+        }
+
+
+        .ctn_img>img{
+            max-width: 400px;
+        }
+        p,label{
+            color: var(--color1);
+            padding: 15px 0;
+        }
+        input[type="radio"]{
+            height: 16px;
+            width: 16px;
+        }
+        input,textarea,select{
+            border-radius: 5px;
+            border: none;
+        }
+
+    /* fin theme  */
+ 
+    .mobile{
+        display: none;
+    }
+    .tablette{
+        display: none ;
+    }
+  
+    /* personnalisation de la barre de scroll */
+        body::-webkit-scrollbar,#result_realisation>div::-webkit-scrollbar  {
+            width: 10px; /* width of the entire scrollbar */   
+        }
+        body::-webkit-scrollbar-track,#result_realisation>div::-webkit-scrollbar   {
+            background: var(--color3); /* color of the tracking area */ 
+        }
+        body::-webkit-scrollbar-thumb,#result_realisation>div::-webkit-scrollbar-thumb{
+            border: 2px solid rgba(255, 255, 255, 0.16);
+            background: linear-gradient(318deg, #fff 0%, rgba(255, 255, 255, 0.40) 105.18%), rgba(255, 255, 255, 0.50);
+            background-blend-mode: soft-light, normal;
+            box-shadow: 20px 20px 24px -2px #A1A1A1 inset, -20px -20px 40px 0px #F6F6F6 inset;  
+            border-radius: 20px; 
+        }
+    /* fin personnalisation de la barre de scroll */
+
+    /* lien qui scroll en haut de la page avec js */
+        #scrall_top{
+            position:fixed ;
+            right: 1%;
+            bottom: 5%;
+            background:var(--color3);
+            z-index: 3;
+            transform: rotate(-90deg);
+            padding: 5px; 
+            border-radius: 50%; 
+        }
+        #scrall_top>img{
+            width: 50px;
+        }
+       
+    /* fin lien qui scroll en haut de la page avec js */
+    
+/* FIN REGLES GENERALE */
+
+
+/* HEADER */
+    header{
+        padding: 30px var(--pad-l);
+    }
+    header a{
+    color: var(--color2);
+    }
+    header nav{
+        margin-right: 15px;
+    }
+    .logo{
+        width: 200px;
+    }
+    header ul li>a{
+        padding: 10px 15px;
+    }
+   
+    #ctn_logo_header div:last-child img{
+        width: 80px;
+        margin-left: 20px;
+    }
+    .header_fixed{
+        position: fixed;
+        width: 100%;
+        background: inherit;
+        padding: 10px var(--pad-l);
+        z-index: 1; 
+    }
+
+    /* bouton demande de rappel */
+
+    #ctn_form_rappel{
+        opacity: 0;
+        z-index: -1;
+        left: 0; /*a ajuster*/
+        width: 100%;
+        transform: translateY(-10px);
+    }
+    #btn_rappel{
+    padding:10px 15px;
+    border-radius: 5px; 
+    background-color: var(--color1);
+    width: max-content;
+    }
+    #btn_rappel:hover{
+    background-color: var(--color2);
+    }
+    #btn_rappel img{
+    width: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+    }
+    #rappel:checked + #ctn_form_rappel{
+        opacity: 1;
+        z-index: 3;
+        border: solid 1px var(--color2);
+        border-top: none ;
+        border-bottom-left-radius: 15px;  
+        border-bottom-right-radius: 15px;  
+        background-color: var(--color3);
+        transform: translateY(0);
+        /* top: 60%; */
+    }
+    #form_rappel {
+        padding:10px 3%;
+    }
+    #form_rappel .erreur_form{
+        font-size: 1.2rem;
+    }
+    #form_rappel input{
+        padding: initial;
+    }
+    #form_rappel input[type="submit"]{
+    white-space: initial;
+    margin-top: 15px;
+    padding:5px;
+    }
+    /* fin bouton demande de rappel */
+
+/* FIN HEADER */
+
+/* MAIN */
+     #intro{
+        background: linear-gradient( to left,var(--color8), var(--color1));
+        box-shadow: none;
+    } 
+    #intro .ctn_img>img{
+        max-width: 300px;
+    }
+    /* vidéo */
+
+    #video article a{
+        padding: 0 5px;
+        margin-top: 15px;
+    }
+
+    #video article a:hover{
+        background: rgba(255, 0, 0, 0.596);
+    }
+    iframe{
+        width: 100%;
+        height: 200px;
+        border-radius: 5px;
+    }
+    .ctn_slider_auto{
+        padding: 10px 0;
+    }
+    .link_youtube{
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    /* fin vidéo */
+
+    /* outils  */
+    #ctn_outil{
+        width: 60%;
+        box-shadow: 0 0 15px 15px var(--color1);
+    }
+    .ctn_input{
+        justify-content: start;
+        /* padding: 30px 0; */
+    }
+    .form input,.form select{
+       padding: 5px;
+    }
+    select,input{
+        font-size: 1rem;
+    }
+    .form .submit{
+        margin: 0 0 0 15px;
+    }
+    .ctn_radio label{
+        margin-right: 5px;
+
+    }
+    .reponse{
+        padding-top: 30px ;
+    }
+
+    /* fin outils */
+
+
+    /* formulaire de contacte */
+
+    /* #non_prenom,#tel_mail, div {
+        padding: 0;
+    } */
+
+    #contact form{
+        box-shadow: 0 0 15px 15px var(--color5);
+        background: var(--color5);
+        padding: 15px 20px;
+        width: 40%;
+    }
+ 
+    #contact form input[type="submit"]:hover{
+        background: var(--color8);
+        color: var(--color5);
+       
+    }
+ 
+    #non_prenom input,#tel_mail input{
+        width: 100%;
+        padding: 15px 5%;
+        margin: 15px 0;
+        font-family: inherit;
+        font-size: inherit;
+        color: var(--color1);
+    }
+    #non_prenom div:first-child,#tel_mail div:first-child{
+        margin-right: 15px;
+    }
+    #non_prenom div:last-child,#tel_mail div:last-child{
+        margin-left: 15px;
+    }
+    
+    .label{
+        display:block;
+        position: absolute;
+        left:30px;
+        bottom:25px;
+        transition: all .3s;
+        opacity: 0;
+        cursor: initial;
+        z-index: -1; 
+    }
+    form input:not(:placeholder-shown)+.label{
+        display: block;
+        position: absolute;
+        left: 30px;
+        bottom: 60px;
+        z-index: 1;
+        color: var(--color1);
+        opacity: 1;
+    }
+
+
+    textarea{
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 300px;
+        padding: 2%;
+        color: var(--color1);
+        margin-bottom: 20px;
+        font-family: inherit;
+        font-size: inherit;
+    }
+
+    /* fon formulaire de contact */
+
+   
+/* FIN MAIN */
+
+
+
+
+/* FOOTER*/
+
+#section_footer div:nth-child(2).ctn_img>img{
+    width: 80px;
+}
+#section_footer div:last-child .ctn_img>img{
+    width: 50px;
+}
+footer a{
+    color: inherit;
+}
+footer a:hover{
+    color: var(--color2);
+}
+
+    
+
+
+/* FIN FOOTER*/

@@ -1,0 +1,241 @@
+/*
+HTML A POSER JUSTE AVANT <UL> 
+<input id="burger" type="checkbox">
+<label for="burger"></label> 
+*/
+
+/* TABLETTE */
+@media screen and (max-width:979px){
+
+    .responssive{
+        display: block;
+    }
+    .desktop{
+        display: none;
+    }
+    
+    #burger+label {/*Regle de style du label */        
+        display: block;
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        top: 35px;
+        right: 70px;
+        z-index: 1100;
+    }
+    #burger+label:before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top: solid 5px var(--color2); /*barre du haut */
+        border-bottom: solid 5px var(--color2);/*barre du millieu*/
+        transition: all 0.3s;
+        border-radius: 10px;
+    }
+    #burger+label:after {
+        content: '';
+        width: 100%;
+        position: absolute;
+        top: 28px;
+        left: 0;
+        border-top: solid 5px var(--color2);/*barre du bas*/
+        transition: all 0.3s;
+    }
+    #burger:checked+label:before {  /*la barre du haut diparait et la barre du milieu fait une rotate de 45°*/
+        border-top-color: transparent;
+        height: 0;
+        top: 25px;
+        transform: rotate(45deg);
+        border-radius: 50%;/*la barre du millieu devien pointu sur les bords*/
+    }
+    #burger:checked+label:after {/*la barre du bas fait une rotate de 45° et devient pointue sur les bords*/
+        transform: rotate(-45deg);
+        border-radius: 50%;
+    }
+   ul { /*regle de style du ul qui se deroule */
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: var(--color6);
+        display: flex;
+        flex-direction: column;
+        transition: all .3s;
+        transform: translateX(-120%);
+        overflow: scroll;
+        z-index: 50;
+    }
+    #burger:checked+label + ul{
+    /* regle de style quand le burger est coché */
+     transform: translateX(0);
+    }
+    header nav li { /*pour aerer le ul */
+        flex: 2;
+        display: inherit;
+        align-items: center;
+        justify-content: center;
+     
+    }
+    /* les liens dans les li */
+    header nav li a {
+      color: var(--color1);
+      font-size: 1.8rem;
+      border-bottom: solid 1px var(--color3);
+    }
+    header{
+        flex-direction: column;
+    }
+    #ctn_logo_header div{
+        margin: 15px 0;
+        
+    }
+    /* main */
+        /* section intro */
+        #intro{
+            flex-direction: column;
+        }
+        #intro>div{
+            margin-bottom: 30px;
+        }
+        /* fin section intro */
+
+        /* section description */
+        #description{
+            flex-direction: column;
+        }
+        #description > article{
+            padding: var(--pad-h) 0;
+
+        }
+        /* fin section description */
+
+        /* video */
+
+        #video{
+            flex-direction: column-reverse;
+        }
+        #video .w2:first-child{
+            width: 100%;
+        }
+        #video .w2:last-child{
+            width: 80%;
+        }
+        #video article a:hover{
+            background: transparent;
+        }
+        /* fin vidéo */
+
+        /* outils */
+        #ctn_outil, #ctn_outil form{
+            width: 100%;
+        }
+        /* fin outils */
+        
+
+
+        /*  contacte */
+
+        #contact{
+            flex-direction: column;
+        }
+        #contact form{
+            width: 100%;
+        }
+        #contact article{
+            padding-bottom: var(--pad-h);
+            width: 100%;
+        }
+        #contact article h2 {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+
+        /* fin contacte */
+
+
+        /* footer */
+
+        #section_footer{
+            flex-direction: column;
+        }
+        #section_footer div:nth-child(2).ctn_img>img{
+            margin: 30px 0 5px ;
+        }
+
+
+        /* fin footer */
+    /* fin main */
+
+        
+    
+}
+
+
+/* MOBILE */
+@media screen and (max-width:767px){
+    /* outil */
+   .form_radio{
+    width: 70%;
+   }
+    #ctn_outil .ctn_input{
+        flex-direction: column;
+    }
+    .form .submit{
+        margin: 15px auto 0;
+        max-width: max-content;
+    }
+    .form label,.reponse p{
+        text-align: center;
+    }
+    /* fin outil */
+   
+
+    /* formulaire de contacte */
+   
+   
+    h2{
+        text-align: center;
+   }
+   
+   #contact #non_prenom,#contact #tel_mail{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    #non_prenom div:first-child,#tel_mail div:first-child{
+        margin-right: 0;
+        width: 100%;
+    }
+    #non_prenom div:last-child,#tel_mail div:last-child{
+        margin-left: 0;
+        width: 100%;
+    }
+    /* fin formulaire de contacte */
+
+
+
+}
+@media screen and (max-width:500px){
+    header{
+        flex-direction: column;
+    }
+    #description img{
+        width: 100%;
+    }
+    #burger+label{
+        right: 15px;
+    }
+}
+
+
+@media screen and (max-width:400px){
+    .reponse a{
+        font-size: 1rem;
+    }
+}
