@@ -84,9 +84,8 @@
     header{
         flex-direction: column;
     }
-    #ctn_logo_header div{
-        margin: 15px 0;
-        
+    header div:last-child{
+        margin-top: 15px;
     }
     /* main */
         /* section intro */
