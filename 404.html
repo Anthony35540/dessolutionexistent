@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+     <!-- <script src="assets/js/tarteaucitron/tarteaucitron.js"></script> -->
+
+    <script type="text/javascript">
+    tarteaucitron.init({
+      "privacyUrl": "", /* URL de la politique de confidentialité */
+      "bodyPosition": "bottom", /*ou top pour l'amener comme premier élément d'accessibilité */
+
+      "hashtag": "#tarteaucitron", /* Ouvrez le panneau avec ce hashtag */
+      "cookieName": "tarteaucitron", /* Nom du cookie*/
+
+      "orientation": "middle", /* Position de la bannière (haut - bas) */
+   
+      "groupServices": false, /*Regrouper les services par catégorie */
+      "serviceDefaultState": "wait", /*État par défaut (true - wait - false) */
+                       
+      "showAlertSmall": false, /* Afficher la petite bannière en bas à droite */
+      "cookieslist": false, /* Afficher la liste des cookies */
+                       
+      "closePopup": false, /* Afficher un X fermé sur la bannière */
+
+      "showIcon": true, /* Afficher l'icône de cookie pour gérer les cookies */
+      //"iconSrc": "", /* Facultatif : URL ou image encodée en base64 */
+      "iconPosition": "BottomRight", /* En bas à droite, en bas à gauche, en haut à droite et en haut à gauche */
+
+      "adblocker": false, /* Afficher un avertissement si un bloqueur de publicités est détecté */
+                       
+      "DenyAllCta" : true, /* Afficher le bouton Refuser tout */
+      "AcceptAllCta" : true, /* Afficher le bouton Accepter tout lorsque highPrivacy est activé*/
+      "highPrivacy": true, /* FORTEMENT RECOMMANDÉ Désactiver le consentement automatique */
+                       
+      "handleBrowserDNTRequest": false, /* Si Ne pas suivre == 1, interdire tout */
+
+      "removeCredit": false, /* Supprimer le lien de crédit */
+      "moreInfoLink": true, /* Afficher le lien d'informations supplémentaires*/
+
+      "useExternalCss": false, /* Si faux, le fichier tarteaucitron.css sera chargé*/
+      "useExternalJs": false, /* Si faux, le fichier tarteaucitron.js sera chargé*/
+
+      //"cookieDomain": ".mon-domaine-multisite.fr", /* Cookie partagé pour le multisite */
+                      
+      "readmoreLink": "", /* Changer le lien readmore par défaut */
+
+      "mandatory": true, /* Afficher un message sur les cookies obligatoires */
+      "mandatoryCta": true /* Afficher le bouton d'acceptation désactivé lorsqu'il est obligatoire sur */
+    });
+
+
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script type="text/javascript">
+    tarteaucitron.user.gtagUa = 'G-5KTF1DGV9C';
+    // tarteaucitron.user.gtagCrossdomain = ['example.com', 'example2.com'];
+    tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */ };
+    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/framework.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/responssive.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/sliderauto.css" type="text/css">
+    
+
+   
+    <title>Des solutions existent</title>
+</head>
+<body class="bgcolor6">
+    <!-- bouton scrall top -->
+    <a id="scrall_top" class="hidden fixed flex content_center items_center" href="#"><img class="icone" src="assets/img/fleche_top.webp" alt=""></a>
+
+    <header id="header" class="flex between items_center transition">
+        <a href="index.html">
+            <div>
+                <img class="logo" src="assets/img/logo_solution.webp" alt="">
+            </div>
+                
+        </a>
+        <div class="flex items_center">
+       
+
+            <div id="bloc_tel_header" class="relative">
+                <label id="btn_rappel" for="rappel" class=" out flex items_center pointer color3 transition">
+                <img class="" src="assets/img/icone_tel.webp" alt=""><span class="center"> Demande de rappel<?php if (isset($nomBtnRappel)) { echo $nomBtnRappel; } ?></span>
+                </label>
+                <input type="checkbox" id="rappel" <?php if (isset($cheked)) {echo $cheked;}?>
+
+
+                <div id="ctn_form_rappel" class="absolute transition <?php if(isset($displayFormTel)){echo $displayFormTel;} ?>">
+                    <form id="form_rappel" class="flex column w1 " method="POST" action="">
+                        <?php if (isset($erreurChampsVide)) {echo $erreurChampsVide;} ?>
+                        <?php if (isset($erreurChamps)) {echo $erreurChamps;} ?>
+                        <label for="nom_rappel">Nom</label>
+                        <input id="nom_rappel" type="text" name="nom_rappel" class="w1 <?php if (isset($color_champ["nom_rappel"])) {echo $color_champ["nom_rappel"];
+                        } ?>" value="<?php if (isset($_POST["nom_rappel"])) {echo $_POST["nom_rappel"];
+                        } ?>">
+                        <label for="tel_rappel"> Tel</label>
+                        <input type="tel" name="tel_rappel" class="w1 <?php if (isset($color_champ["tel_rappel"])) {echo $color_champ["tel_rappel"];} ?>" value="<?php if (isset($_POST["tel_rappel"])) {echo $_POST["tel_rappel"];} ?>">
+        
+                        <input type="submit" value="Envoyer la demande" name="submit_rappel" >
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <section id="intro" class="radius_right pad flex around items_center hidden">
+            <div class="ctn_img w2">
+                <img class="margin_center" src="assets/img/404v2.webp" alt="">
+            </div>
+            <div class="w2">
+                <p class="center color6">Il semble que votre corps ne soit pas correctement équilibré. </p>
+                <div role="button" class="center">
+                    <a class="btn bgcolor3 color1 transition center bloc" href="index.html"> Je reprends mon chemin vers l'équilibre de mon corps</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="pad">
+        <section id="section_footer" class="flex around items_center">
+            <a href="#">
+                <div class="ctn_img">
+                    <img class="logo" src="assets/img/logo_solution.webp" alt="">
+                </div>
+            </a>
+            <div class="flex column items_center">
+                <p>Suivez-nous !</p>
+                <a href=""></a>
+                <a href="https://www.youtube.com/@jeanmicheldavault/videos" target="_blank">
+                    <div class="ctn_img">
+                        <img src="assets/img/icone_youtube.webp" alt="">
+                    </div>
+                </a>
+            </div>
+        </section>
+        <p class="center">
+            ©Des solutions existent  | 2024 | <a href="confidentialite.html" target="_blank">Confidentialité et Cookies</a>  | Développé par <a href="https://www.avwebcreation.fr" class="transition" target="_blank">Avwebcreation</a> 
+        </p>
+    </footer>
+
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>  
+    <script src="assets/js/slide.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="assets/js/scrall.js"></script>
+    <script src="assets/js/close_menu.js"></script>
+   
+</body>
+</html>
